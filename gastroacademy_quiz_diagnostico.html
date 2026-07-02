@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Dónde se está ahogando tu negocio? — GastroAcademy</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#C0392B;
+  --crema:#F5F2EC;
+  --tinta:#1A1612;
+  --kraft:#EAE2D0;
+  --verde:#2F5233;
+  --linea:#D8CFB8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--crema);color:var(--tinta);
+  font-family:'DM Sans',sans-serif;line-height:1.55;
+  min-height:100vh;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+.brand{
+  text-align:center;padding:18px 0 0;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;color:var(--tinta);
+}
+.brand span{color:var(--rojo);}
+
+.stage{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:24px 20px 50px;
+}
+.card{
+  width:100%;max-width:480px;background:#fffdf8;
+  border:1.5px solid var(--tinta);position:relative;
+}
+
+/* ---- progress strip ---- */
+.progress-strip{padding:16px 22px 0;}
+.progress-label{
+  display:flex;justify-content:space-between;
+  font-family:'DM Mono',monospace;font-size:10.5px;
+  letter-spacing:.06em;color:#8a8270;margin-bottom:8px;
+}
+.progress-track{height:4px;background:var(--linea);}
+.progress-fill{height:100%;background:var(--rojo);width:0%;transition:width .4s ease;}
+
+/* ---- INTRO ---- */
+.screen{padding:30px 26px 32px;}
+.intro .eyebrow{
+  font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--rojo);
+  border:1px solid var(--rojo);display:inline-block;padding:4px 9px;margin-bottom:16px;
+}
+.intro h1{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,7vw,38px);
+  line-height:1.05;text-transform:uppercase;margin-bottom:14px;
+}
+.intro h1 .accent{color:var(--rojo);}
+.intro p{font-size:14.5px;color:#4a4338;margin-bottom:22px;}
+.intro-meta{
+  font-family:'DM Mono',monospace;font-size:11px;color:#8a8270;
+  margin-bottom:22px;letter-spacing:.02em;
+}
+.start-btn{
+  display:block;width:100%;text-align:center;background:var(--rojo);color:var(--crema);
+  font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em;
+  padding:15px;border:none;cursor:pointer;
+}
+.start-btn:hover{opacity:.92;}
+
+/* ---- QUESTION ---- */
+.q-tag{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;
+  color:#8a8270;text-transform:uppercase;margin-bottom:10px;
+}
+.q-text{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,5.5vw,27px);
+  line-height:1.12;text-transform:none;margin-bottom:22px;
+}
+.opt{
+  display:block;width:100%;text-align:left;background:var(--kraft);
+  border:1px solid var(--linea);padding:14px 16px;margin-bottom:10px;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--tinta);
+  cursor:pointer;transition:border-color .15s,background .15s;
+}
+.opt:hover{border-color:var(--rojo);background:#fff;}
+.opt:active{background:#f0e9d8;}
+
+/* ---- LOADING ---- */
+.loading{text-align:center;padding:50px 26px;}
+.loading p{
+  font-family:'DM Mono',monospace;font-size:12px;color:#8a8270;
+  letter-spacing:.04em;
+}
+.dots span{
+  display:inline-block;width:6px;height:6px;background:var(--rojo);
+  border-radius:50%;margin:0 3px;animation:bounce 1s infinite ease-in-out;
+}
+.dots span:nth-child(2){animation-delay:.15s;}
+.dots span:nth-child(3){animation-delay:.3s;}
+@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
+
+/* ---- RESULT ---- */
+.result-tag{
+  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--rojo);margin-bottom:10px;
+}
+.result-cat{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,7vw,36px);
+  line-height:1.05;text-transform:uppercase;color:var(--tinta);margin-bottom:14px;
+}
+.result-headline{font-size:16px;font-weight:700;margin-bottom:10px;}
+.result-body{font-size:13.5px;color:#4a4338;margin-bottom:14px;}
+.cost-box{
+  background:#fbeceb;border-left:3px solid var(--rojo);padding:12px 14px;
+  font-size:13px;color:#3a342c;margin-bottom:16px;
+}
+.week-box{
+  background:var(--kraft);border:1px dashed var(--tinta);padding:12px 14px;
+  font-size:13px;color:#3a342c;margin-bottom:22px;
+}
+.result-cta{
+  display:block;width:100%;text-align:center;background:var(--rojo);color:var(--crema);
+  font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.03em;
+  padding:16px;text-decoration:none;margin-bottom:10px;
+}
+.result-cta-sub{
+  display:block;text-align:center;font-family:'DM Mono',monospace;
+  font-size:10.5px;color:#9a917e;margin-bottom:22px;
+}
+.secondary-cta{
+  display:block;text-align:center;font-family:'DM Sans',sans-serif;
+  font-size:12.5px;color:#6b6253;text-decoration:underline;margin-bottom:14px;
+}
+.restart{
+  display:block;text-align:center;font-family:'DM Mono',monospace;
+  font-size:10.5px;color:#9a917e;text-decoration:none;
+}
+
+footer{
+  text-align:center;padding:0 0 22px;
+  font-family:'DM Mono',monospace;font-size:10.5px;color:#9a917e;
+}
+</style>
+</head>
+<body>
+
+<div class="brand">GASTRO<span>ACADEMY</span> — DIAGNÓSTICO</div>
+
+<div class="stage">
+  <div class="card" id="card">
+    <!-- content injected by JS -->
+  </div>
+</div>
+
+<footer>GASTROCONMARIO · Medellín</footer>
+
+<script>
+const questions = [
+  {
+    text: "Si te vas 7 días sin avisarle a nadie, ¿qué es lo primero que se cae?",
+    options: [
+      "El orden — todo se vuelve caos sin que yo esté encima",
+      "El estándar — el equipo baja la guardia sin supervisión",
+      "Las ventas — porque la gente viene a verme a mí, no a la marca",
+      "El control — ni sabría cuánto se gastó esa semana"
+    ]
+  },
+  {
+    text: "¿Cuál de estas frases se parece más a lo que piensas seguido?",
+    options: [
+      "“Si no superviso cada paso, algo se rompe”",
+      "“Consigo buena gente, pero no logro que se quede ni que rinda”",
+      "“Vendo, pero entre semana el negocio se siente invisible”",
+      "“A fin de mes la plata nunca cuadra como debería”"
+    ]
+  },
+  {
+    text: "Cuando algo sale mal en el servicio, ¿qué pasa normalmente?",
+    options: [
+      "Cada quien improvisa — no hay un protocolo claro",
+      "El equipo espera a que yo decida, nadie asume",
+      "El cliente no vuelve y no tengo forma de saber por qué",
+      "No mido si ese error me costó plata de verdad"
+    ]
+  },
+  {
+    text: "Tu martes o miércoles típico es...",
+    options: [
+      "Tan caótico como el fin de semana, sin razón aparente",
+      "El equipo se desinfla — poca gente, poca energía",
+      "Flojo — el negocio solo se llena los fines de semana",
+      "Un misterio — no sé si esos días dan pérdida o ganancia"
+    ]
+  },
+  {
+    text: "¿Cómo manejas tus costos por plato hoy?",
+    options: [
+      "Tengo un proceso, pero no se cumple siempre",
+      "Lo revisa otra persona — yo no le meto la mano",
+      "Ni lo conecto con lo que hago en marketing o ventas",
+      "Calculo por intuición, no por números reales"
+    ]
+  },
+  {
+    text: "Si pudieras arreglar UNA sola cosa ya mismo, ¿cuál sería?",
+    options: [
+      "Que todo funcione igual, esté yo o no esté",
+      "Tener un equipo que se quede y que rinda",
+      "Que la gente piense en mí primero, no solo cuando pasa por enfrente",
+      "Saber exactamente cuánto gano por cada peso que entra"
+    ]
+  }
+];
+
+const categories = [
+  {
+    label: "PROCESOS",
+    headline: "Tu negocio depende de que tú estés ahí.",
+    body: "No es que tu equipo sea malo — es que no hay un sistema que funcione sin que tú estés encima de cada detalle. Eso no es liderazgo, es estar atrapado.",
+    cost: "Lo que te está costando: tu tiempo, tu cabeza, y la posibilidad real de escalar.",
+    week: "Esto es justo lo que se ataca desde la Semana 1 de GastroAcademy 2.0 — el sistema completo, no un parche."
+  },
+  {
+    label: "PERSONAL",
+    headline: "Tu equipo no rinde porque nadie lo está dirigiendo de verdad.",
+    body: "Contratas, entrenas, y aun así se van — o se quedan, pero hacen lo mínimo. Eso no se arregla con más motivación, se arregla con autoridad y procesos claros.",
+    cost: "Lo que te está costando: rotación constante, reentrenar una y otra vez, y un servicio que nunca es consistente.",
+    week: "GastroAcademy 2.0 trabaja esto en cada sesión en vivo con Mario — disciplina y cultura, no motivación vacía."
+  },
+  {
+    label: "MARKETING",
+    headline: "Vendes, pero no estás posicionado en la mente de nadie.",
+    body: "Tienes días llenos, pero entre semana el negocio desaparece. No es falta de calidad — es falta de presencia constante.",
+    cost: "Lo que te está costando: clientes que no vuelven porque ni se acuerdan de ti.",
+    week: "La Semana 3 de GastroAcademy 2.0 está dedicada exactamente a esto: marketing orgánico que sí llena mesas."
+  },
+  {
+    label: "COSTOS E INVENTARIO",
+    headline: "Facturas, pero no sabes cuánto ganas de verdad.",
+    body: "Sin números no hay empresa seria. Si no sabes cuánto te cuesta cada plato, estás operando a ciegas, así factures bien.",
+    cost: "Lo que te está costando: plata que se va sin que la veas, mes tras mes.",
+    week: "La Semana 2 de GastroAcademy 2.0 — inventarios y costeo real — está hecha exactamente para esto."
+  }
+];
+
+// EDITAR: cuando ambas páginas estén hosteadas, reemplazar por la URL real de la página de ventas
+const SALES_PAGE_URL = "gastroacademy_pagina_ventas_mvp.html#oferta";
+// EDITAR: reemplazar por el link real de WhatsApp de la comunidad
+const WHATSAPP_URL = "#";
+
+let current = -1; // -1 = intro
+const scores = [0,0,0,0];
+const card = document.getElementById('card');
+
+function renderIntro(){
+  card.innerHTML = `
+    <div class="screen intro">
+      <span class="eyebrow">Diagnóstico de 2 minutos</span>
+      <h1>¿Dónde se está<br><span class="accent">ahogando</span><br>tu negocio?</h1>
+      <p>6 preguntas para identificar exactamente cuál es el cuello de botella que te está costando plata hoy — y qué hacer con eso.</p>
+      <div class="intro-meta">6 preguntas · ~2 min · resultado inmediato</div>
+      <button class="start-btn" onclick="nextQuestion()">EMPEZAR DIAGNÓSTICO →</button>
+    </div>`;
+}
+
+function renderProgress(){
+  const pct = current < 0 ? 0 : (current / questions.length) * 100;
+  return `
+    <div class="progress-strip">
+      <div class="progress-label"><span>PREGUNTA ${Math.min(current+1, questions.length)}/${questions.length}</span><span>DIAGNÓSTICO</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>`;
+}
+
+function renderQuestion(){
+  const q = questions[current];
+  let optsHtml = q.options.map((opt,i)=>`<button class="opt" onclick="answer(${i})">${opt}</button>`).join('');
+  card.innerHTML = `
+    ${renderProgress()}
+    <div class="screen">
+      <div class="q-tag">Pregunta ${current+1} de ${questions.length}</div>
+      <div class="q-text">${q.text}</div>
+      ${optsHtml}
+    </div>`;
+}
+
+function answer(idx){
+  scores[idx]++;
+  current++;
+  if(current < questions.length){
+    renderQuestion();
+  } else {
+    renderLoading();
+    setTimeout(renderResult, 900);
+  }
+}
+
+function nextQuestion(){
+  current = 0;
+  renderQuestion();
+}
+
+function renderLoading(){
+  card.innerHTML = `
+    <div class="loading">
+      <p>Calculando tu diagnóstico</p>
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>`;
+}
+
+function renderResult(){
+  let maxIdx = 0;
+  for(let i=1;i<scores.length;i++){ if(scores[i] > scores[maxIdx]) maxIdx = i; }
+  const cat = categories[maxIdx];
+  card.innerHTML = `
+    <div class="screen">
+      <div class="result-tag">Tu diagnóstico</div>
+      <div class="result-cat">${cat.label}</div>
+      <div class="result-headline">${cat.headline}</div>
+      <p class="result-body">${cat.body}</p>
+      <div class="cost-box">${cat.cost}</div>
+      <div class="week-box">${cat.week}</div>
+      <a class="result-cta" href="${SALES_PAGE_URL}">VER LA CURA: GASTROACADEMY 2.0 →</a>
+      <span class="result-cta-sub">Cupo fundador · precio bloqueado para siempre</span>
+      <a class="secondary-cta" href="${WHATSAPP_URL}">Prefiero solo unirme gratis a la comunidad</a>
+      <a class="restart" href="javascript:void(0)" onclick="restart()">↺ Volver a hacer el diagnóstico</a>
+    </div>`;
+}
+
+function restart(){
+  current = -1;
+  scores.fill(0); scores[0]=0;scores[1]=0;scores[2]=0;scores[3]=0;
+  renderIntro();
+}
+
+renderIntro();
+</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GastroAcademy 2.0 — Cupo Fundador</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#C0392B;
+  --crema:#F5F2EC;
+  --tinta:#1A1612;
+  --kraft:#EAE2D0;
+  --verde:#2F5233;
+  --dorado:#B8902E;
+  --linea:#D8CFB8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--crema);
+  color:var(--tinta);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:1.05;text-transform:uppercase;}
+.mono{font-family:'DM Mono',monospace;}
+
+/* ---- top bar ---- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--tinta);
+  border-bottom:2px solid var(--rojo);
+}
+.topbar-inner{
+  max-width:760px;margin:0 auto;padding:10px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.topbar-logo{
+  font-family:'Bebas Neue',sans-serif;color:var(--crema);
+  font-size:18px;letter-spacing:.08em;
+}
+.topbar-logo span{color:var(--rojo);}
+.topbar-cta{
+  font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+  color:var(--tinta);background:var(--crema);
+  padding:8px 14px;border-radius:3px;text-decoration:none;
+  letter-spacing:.04em;white-space:nowrap;
+}
+
+/* ---- generic section rhythm ---- */
+section{padding:64px 0;border-bottom:1px solid var(--linea);}
+section:last-of-type{border-bottom:none;}
+.eyebrow{
+  font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);
+  display:inline-block;margin-bottom:14px;
+  border:1px solid var(--rojo);padding:4px 10px;border-radius:2px;
+}
+.fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.fade.in{opacity:1;transform:translateY(0);}
+
+/* ---- HERO ---- */
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--linea);}
+.hero h1{font-size:clamp(34px,7vw,54px);margin-bottom:18px;}
+.hero h1 .accent{color:var(--rojo);}
+.hero-sub{font-size:17px;color:#3a342c;max-width:560px;margin-bottom:30px;}
+.hero-sub strong{color:var(--tinta);}
+.cta-btn{
+  display:inline-block;background:var(--rojo);color:var(--crema);
+  font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.04em;
+  padding:16px 30px;border-radius:3px;text-decoration:none;
+  border:2px solid var(--rojo);transition:background .15s,color .15s;
+}
+.cta-btn:hover{background:transparent;color:var(--rojo);}
+.cta-micro{
+  display:block;margin-top:12px;font-family:'DM Mono',monospace;
+  font-size:11.5px;color:#6b6253;letter-spacing:.03em;
+}
+
+/* ---- STAT TICKETS ---- */
+.stats-intro{font-size:16px;margin-bottom:30px;max-width:520px;}
+.ticket-row{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;}
+.ticket{
+  position:relative;background:#fff;border:1px solid var(--linea);
+  border-top:3px solid var(--rojo);padding:20px 18px 26px;
+}
+.ticket::after{
+  content:'';position:absolute;left:0;right:0;bottom:-1px;height:10px;
+  background:
+    linear-gradient(135deg,var(--crema) 6px,transparent 0) 0 0,
+    linear-gradient(225deg,var(--crema) 6px,transparent 0) 0 0;
+  background-size:12px 12px;background-repeat:repeat-x;
+}
+.ticket-num{font-family:'DM Mono',monospace;font-weight:500;font-size:30px;color:var(--tinta);display:block;}
+.ticket-label{font-size:12.5px;color:#5a5246;margin-top:6px;line-height:1.5;}
+.ticket-src{font-family:'DM Mono',monospace;font-size:9.5px;color:#9a917e;margin-top:8px;display:block;letter-spacing:.02em;}
+.stats-close{margin-top:30px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--tinta);max-width:480px;}
+.stats-close span{color:var(--rojo);}
+
+@media(max-width:540px){.ticket-row{grid-template-columns:1fr 1fr;}}
+
+/* ---- 4 FUGAS ---- */
+.fugas-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
+.fuga{background:var(--kraft);border:1px solid var(--linea);padding:20px;}
+.fuga-tag{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px;display:block;}
+.fuga h3{font-size:21px;margin-bottom:8px;}
+.fuga p{font-size:13.5px;color:#4a4338;}
+@media(max-width:560px){.fugas-grid{grid-template-columns:1fr;}}
+
+/* ---- QUÉ ES ---- */
+.que-es h2{font-size:clamp(26px,5.5vw,36px);margin-bottom:18px;max-width:560px;}
+.que-es p{font-size:16px;color:#3a342c;margin-bottom:14px;max-width:560px;}
+.live-badge{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  background:var(--tinta);color:var(--crema);padding:10px 16px;
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.03em;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--rojo);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.photo-slot{
+  margin-top:24px;border:1.5px dashed #b5ab93;background:#fff;
+  padding:34px 18px;text-align:center;font-family:'DM Mono',monospace;
+  font-size:11.5px;color:#9a917e;letter-spacing:.03em;
+}
+
+/* ---- ROADMAP ---- */
+.roadmap{margin-top:30px;display:flex;flex-direction:column;gap:0;}
+.week{display:flex;gap:18px;padding:20px 0;border-top:1px solid var(--linea);}
+.week:last-child{border-bottom:1px solid var(--linea);}
+.week-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--rojo);width:54px;flex-shrink:0;line-height:1;}
+.week-body h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15.5px;text-transform:none;letter-spacing:0;margin-bottom:5px;}
+.week-body p{font-size:13.5px;color:#4a4338;}
+.week-guest{
+  display:inline-block;margin-top:8px;font-family:'DM Mono',monospace;
+  font-size:10.5px;color:var(--verde);background:#e7ede6;
+  padding:3px 8px;border-radius:2px;letter-spacing:.02em;
+}
+
+/* ---- TESTIMONIOS ---- */
+.test-note{
+  font-family:'DM Mono',monospace;font-size:11.5px;color:var(--rojo);
+  background:#fbeceb;border:1px dashed var(--rojo);padding:10px 14px;
+  margin-bottom:24px;line-height:1.6;
+}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.test-card{background:#fff;border:1px solid var(--linea);padding:18px;position:relative;}
+.test-card::before{content:'“';position:absolute;top:6px;left:12px;font-family:Georgia,serif;font-size:34px;color:var(--linea);}
+.test-name{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;margin-bottom:6px;}
+.test-quote{font-size:13.5px;color:#4a4338;font-style:italic;min-height:54px;}
+.test-result{
+  margin-top:10px;font-family:'DM Mono',monospace;font-size:11px;
+  color:var(--verde);font-weight:500;
+}
+@media(max-width:560px){.test-grid{grid-template-columns:1fr;}}
+
+/* ---- FACTURA / OFERTA ---- */
+.factura-wrap{margin-top:34px;display:flex;justify-content:center;}
+.factura{
+  width:100%;max-width:440px;background:#fffdf8;
+  border:1.5px solid var(--tinta);position:relative;
+  padding:0;
+}
+.factura-head{
+  background:var(--tinta);color:var(--crema);padding:16px 20px;
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.factura-head .ft{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;}
+.factura-head .fn{font-family:'DM Mono',monospace;font-size:10.5px;color:#bdb6a3;}
+.factura-body{padding:22px 24px;}
+.factura-row{
+  display:flex;justify-content:space-between;gap:10px;
+  font-family:'DM Mono',monospace;font-size:13px;
+  padding:9px 0;border-bottom:1px dotted #cbc2ab;color:#3a342c;
+}
+.factura-row.head{font-weight:500;color:#9a917e;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--tinta);}
+.price-block{margin:18px 0;text-align:center;}
+.price-old{font-family:'DM Mono',monospace;font-size:14px;color:#9a917e;text-decoration:line-through;}
+.price-new{font-family:'Bebas Neue',sans-serif;font-size:46px;color:var(--rojo);line-height:1;margin-top:4px;}
+.price-new span{font-family:'DM Mono',monospace;font-size:14px;color:var(--tinta);vertical-align:middle;}
+.price-lock{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--verde);margin-top:4px;}
+.stamp{
+  position:absolute;top:64px;right:-10px;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--rojo);
+  border:2.5px solid var(--rojo);padding:6px 12px;
+  transform:rotate(9deg);letter-spacing:.06em;background:rgba(255,255,255,.85);
+}
+.factura-foot{padding:0 24px 22px;}
+.factura-cta{
+  display:block;text-align:center;background:var(--rojo);color:var(--crema);
+  font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em;
+  padding:14px;text-decoration:none;margin-top:6px;
+}
+.factura-note{
+  text-align:center;margin-top:10px;font-family:'DM Mono',monospace;
+  font-size:10px;color:#9a917e;
+}
+.editable-flag{
+  margin-top:18px;font-family:'DM Mono',monospace;font-size:10.5px;
+  color:var(--rojo);text-align:center;max-width:440px;margin-left:auto;margin-right:auto;
+}
+
+/* ---- REGALO ---- */
+.regalo{background:var(--kraft);}
+.regalo-inner{display:flex;flex-wrap:wrap;gap:24px;align-items:center;}
+.regalo-icon{
+  width:64px;height:64px;flex-shrink:0;border:2px solid var(--tinta);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:11px;text-align:center;line-height:1.3;
+}
+.regalo-text{flex:1;min-width:220px;}
+.regalo-text h3{font-size:24px;margin-bottom:8px;}
+.regalo-text p{font-size:14px;color:#4a4338;margin-bottom:14px;}
+.regalo-cta{
+  display:inline-block;border:2px solid var(--tinta);color:var(--tinta);
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.03em;
+  padding:10px 16px;text-decoration:none;
+}
+
+/* ---- FAQ ---- */
+.faq-item{padding:18px 0;border-top:1px solid var(--linea);}
+.faq-item:last-child{border-bottom:1px solid var(--linea);}
+.faq-q{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;}
+.faq-a{font-size:13.5px;color:#4a4338;}
+
+/* ---- FINAL CTA ---- */
+.final{background:var(--tinta);color:var(--crema);text-align:center;border-bottom:none;}
+.final h2{font-size:clamp(26px,6vw,38px);max-width:600px;margin:0 auto 22px;}
+.final .cta-btn{font-size:21px;padding:18px 34px;}
+.final .cta-micro{color:#a39c8a;}
+
+footer{padding:30px 0;text-align:center;}
+footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-logo">GASTRO<span>ACADEMY</span></div>
+    <a href="#oferta" class="topbar-cta">CUPO FUNDADOR</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">GastroAcademy 2.0 · Primer cupo fundador</span>
+    <h1>Tu restaurante no se está ahogando por falta de clientes.<br><span class="accent">Se está ahogando por falta de sistema.</span></h1>
+    <p class="hero-sub">Los costos de operar un restaurante en Colombia subieron <strong>casi 10% este año</strong>. 6 de cada 10 negocios vendieron igual o menos que el año pasado. Trabajar más duro ya no alcanza — hace falta un sistema que aguante la presión.</p>
+    <a href="#oferta" class="cta-btn">QUIERO MI CUPO FUNDADOR →</a>
+    <span class="cta-micro">Cupos limitados · Precio fundador bloqueado para siempre</span>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO MACRO -->
+<section class="fade">
+  <div class="wrap">
+    <span class="eyebrow">El contexto real</span>
+    <p class="stats-intro">Mientras tú peleas con tu operación día a día, esto está pasando en el sector — y no se arregla solo:</p>
+    <div class="ticket-row">
+      <div class="ticket">
+        <span class="ticket-num">9.6%</span>
+        <span class="ticket-label">Subida anual en costos de restaurantes y hoteles en Colombia — casi el doble que la inflación general del país.</span>
+        <span class="ticket-src">FUENTE: DANE, 2026</span>
+      </div>
+      <div class="ticket">
+        <span class="ticket-num">66%</span>
+        <span class="ticket-label">De los negocios colombianos vendió igual o menos que el año anterior.</span>
+        <span class="ticket-src">FUENTE: FENALCO, MAR. 2026</span>
+      </div>
+      <div class="ticket">
+        <span class="ticket-num">~30%</span>
+        <span class="ticket-label">Subieron los costos laborales en restaurantes: turnos, nómina, prestaciones.</span>
+        <span class="ticket-src">FUENTE: ACODRÉS, 2026</span>
+      </div>
+      <div class="ticket">
+        <span class="ticket-num">6→12</span>
+        <span class="ticket-label">Meses que hoy puede tomar llegar al punto de equilibrio — antes tomaba la mitad.</span>
+        <span class="ticket-src">FUENTE: ACODRÉS BOGOTÁ</span>
+      </div>
+    </div>
+    <p class="stats-close">Esto no se arregla vendiendo más. <span>Se arregla operando distinto.</span></p>
+  </div>
+</section>
+
+<!-- 4 FUGAS -->
+<section class="fade">
+  <div class="wrap">
+    <span class="eyebrow">El diagnóstico</span>
+    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:520px;">¿En cuál de estas te estás ahogando?</h2>
+    <div class="fugas-grid">
+      <div class="fuga">
+        <span class="fuga-tag">Procesos</span>
+        <h3>Caos operativo diario</h3>
+        <p>Si tú no estás, nadie sabe qué hacer. Apagas incendios en vez de dirigir.</p>
+      </div>
+      <div class="fuga">
+        <span class="fuga-tag">Personal</span>
+        <h3>Rotación constante</h3>
+        <p>Entrenas gente y se va. O se queda, pero hace lo mínimo porque nadie supervisa.</p>
+      </div>
+      <div class="fuga">
+        <span class="fuga-tag">Marketing</span>
+        <h3>Vendes, pero no te recuerdan</h3>
+        <p>Estás lleno algunos días, pero no estás posicionado en la mente de la gente.</p>
+      </div>
+      <div class="fuga">
+        <span class="fuga-tag">Costos</span>
+        <h3>No sabes cuánto ganas de verdad</h3>
+        <p>Facturas bien, pero a fin de mes la plata no aparece. Sin números no hay empresa seria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section class="que-es fade">
+  <div class="wrap">
+    <span class="eyebrow">Qué es GastroAcademy 2.0</span>
+    <h2>No es un curso. Es el sistema que Mario usa en sus propios restaurantes.</h2>
+    <p>Mario lleva años operando varios restaurantes en Medellín. No enseña teoría de servilleta — enseña lo que usa esta semana, en su propia operación, para que el negocio funcione sin que él tenga que estar metido en todo.</p>
+    <p>Mientras lees esto, Mario está abriendo <strong>La Grasa</strong>, su restaurante más reciente. No es un caso de estudio de hace cinco años — es la prueba en vivo de que el sistema funciona, documentada desde la construcción hasta la apertura.</p>
+    <span class="live-badge"><span class="live-dot"></span> La Grasa abre estas semanas — síguelo en vivo desde adentro</span>
+    <div class="photo-slot">[ESPACIO PARA FOTO DE MARIO / LA GRASA — agregar antes de publicar]</div>
+  </div>
+</section>
+
+<!-- MES 1 -->
+<section class="fade">
+  <div class="wrap">
+    <span class="eyebrow">Tu primer mes adentro</span>
+    <h2 style="font-size:clamp(26px,5.5vw,34px);">Cuatro semanas, un sistema completo</h2>
+    <div class="roadmap">
+      <div class="week">
+        <span class="week-num">01</span>
+        <div class="week-body">
+          <h3>Mario te conoce</h3>
+          <p>Live de bienvenida. Mario habla en vivo con la comunidad para entender en qué etapa está cada quién — el diagnóstico arranca contigo, no con una lección genérica.</p>
+        </div>
+      </div>
+      <div class="week">
+        <span class="week-num">02</span>
+        <div class="week-body">
+          <h3>Inventarios y costeo real</h3>
+          <p>Cómo saber cuánto te cuesta cada plato, dónde se filtra la plata y cómo montar un control de inventario que no dependa de tu memoria.</p>
+          <span class="week-guest">+ Charla con el contador de Mario</span>
+        </div>
+      </div>
+      <div class="week">
+        <span class="week-num">03</span>
+        <div class="week-body">
+          <h3>Marketing orgánico que sí vende</h3>
+          <p>Cómo posicionarte sin depender de pauta — contenido, presencia y reputación que llenan mesas de verdad.</p>
+          <span class="week-guest">+ Charla con el equipo de mercadeo de Mario</span>
+        </div>
+      </div>
+      <div class="week">
+        <span class="week-num">04</span>
+        <div class="week-body">
+          <h3>Implementación + Q&A en vivo</h3>
+          <p>Aplicas lo del mes a tu negocio real. Mario responde tus casos puntuales en vivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="fade">
+  <div class="wrap">
+    <span class="eyebrow">Resultados reales</span>
+    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:540px;">El año pasado, 5 dueños lo hicieron en 3 meses</h2>
+    <p style="margin:12px 0 20px;font-size:14px;color:#4a4338;">Mentoría intensiva 2025 con Mario. Resultados documentados en sus propios negocios.</p>
+    <div class="test-note">⚠ PLACEHOLDER — reemplazar con nombres, citas y resultados reales de los 5 alumnos de la mentoría antes de publicar. No usar datos inventados.</div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-name">[Nombre del alumno 1] · [Ciudad / tipo de negocio]</div>
+        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
+        <div class="test-result">[Resultado medible, ej: redujo costo de plato en X%]</div>
+      </div>
+      <div class="test-card">
+        <div class="test-name">[Nombre del alumno 2] · [Ciudad / tipo de negocio]</div>
+        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
+        <div class="test-result">[Resultado medible]</div>
+      </div>
+      <div class="test-card">
+        <div class="test-name">[Nombre del alumno 3] · [Ciudad / tipo de negocio]</div>
+        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
+        <div class="test-result">[Resultado medible]</div>
+      </div>
+      <div class="test-card">
+        <div class="test-name">[Nombre del alumno 4] · [Ciudad / tipo de negocio]</div>
+        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
+        <div class="test-result">[Resultado medible]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="fade" id="oferta">
+  <div class="wrap">
+    <span class="eyebrow">La oferta fundador</span>
+    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:540px;">Entra ahora, paga menos para siempre</h2>
+    <div class="factura-wrap">
+      <div class="factura">
+        <div class="stamp">FUNDADOR</div>
+        <div class="factura-head">
+          <span class="ft">FACTURA</span>
+          <span class="fn">N° 001 · CUPO FUNDADOR</span>
+        </div>
+        <div class="factura-body">
+          <div class="factura-row head"><span>Concepto</span><span>Incluye</span></div>
+          <div class="factura-row"><span>Mes 1 completo</span><span>4 semanas en vivo</span></div>
+          <div class="factura-row"><span>Comunidad privada</span><span>WhatsApp + Skool</span></div>
+          <div class="factura-row"><span>Charlas invitadas</span><span>Equipo de Mario</span></div>
+          <div class="factura-row"><span>Regalo de bienvenida</span><span>Plantilla Excel</span></div>
+          <div class="factura-row"><span>Precio bloqueado</span><span>De por vida</span></div>
+          <div class="price-block">
+            <div class="price-old">$39 USD/mes</div>
+            <div class="price-new">$27<span>USD/mes</span></div>
+            <div class="price-lock">✓ Precio fundador — bloqueado para siempre</div>
+          </div>
+        </div>
+        <div class="factura-foot">
+          <a href="#" class="factura-cta">ASEGURAR MI CUPO →</a>
+          <div class="factura-note">Cupos limitados · Cierra con la apertura de La Grasa</div>
+        </div>
+      </div>
+    </div>
+    <p class="editable-flag">⚠ Precio, moneda y link de pago son borrador — confirmar antes de publicar.</p>
+  </div>
+</section>
+
+<!-- REGALO -->
+<section class="regalo fade">
+  <div class="wrap">
+    <div class="regalo-inner">
+      <div class="regalo-icon">XLSX<br>GRATIS</div>
+      <div class="regalo-text">
+        <h3>Antes de entrar, llévate esto</h3>
+        <p>Una plantilla de costeo e inventario en Excel — la misma lógica que usa Mario para saber, plato por plato, cuánto gana de verdad. Sin números no hay empresa seria.</p>
+        <a href="#" class="regalo-cta">DESCARGAR PLANTILLA GRATIS →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="fade">
+  <div class="wrap">
+    <span class="eyebrow">Antes de entrar</span>
+    <div class="faq-item">
+      <div class="faq-q">¿Necesito experiencia previa?</div>
+      <div class="faq-a">No. GastroAcademy 2.0 está pensado para dueños que ya tienen un negocio corriendo, aunque sea pequeño o desordenado. Si ya estás operando, este sistema es para ti.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Qué pasa si no puedo estar en las lives?</div>
+      <div class="faq-a">Quedan grabadas dentro de la comunidad. Pero el valor real está en estar presente — son sesiones de trabajo, no solo charlas.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cuándo cierra el cupo fundador?</div>
+      <div class="faq-a">El precio fundador está ligado a la apertura de La Grasa. Una vez abra, el cupo y el precio cambian.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final fade">
+  <div class="wrap">
+    <h2>La Grasa abre esta semana.<br>Tu sistema también puede empezar ahora.</h2>
+    <a href="#oferta" class="cta-btn">QUIERO MI CUPO FUNDADOR →</a>
+    <span class="cta-micro">Cupos limitados · Precio fundador bloqueado para siempre</span>
+  </div>
+</section>
+
+<footer>
+  <p>GASTROACADEMY · GASTROCONMARIO — Medellín</p>
+</footer>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+fades.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
