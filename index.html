@@ -141,21 +141,11 @@ section:last-of-type{border-bottom:none;}
 }
 
 /* ---- TESTIMONIOS ---- */
-.test-note{
-  font-family:'DM Mono',monospace;font-size:11.5px;color:var(--rojo);
-  background:#fbeceb;border:1px dashed var(--rojo);padding:10px 14px;
-  margin-bottom:24px;line-height:1.6;
-}
 .test-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.test-card{background:#fff;border:1px solid var(--linea);padding:18px;position:relative;}
-.test-card::before{content:'“';position:absolute;top:6px;left:12px;font-family:Georgia,serif;font-size:34px;color:var(--linea);}
-.test-name{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;margin-bottom:6px;}
-.test-quote{font-size:13.5px;color:#4a4338;font-style:italic;min-height:54px;}
-.test-result{
-  margin-top:10px;font-family:'DM Mono',monospace;font-size:11px;
-  color:var(--verde);font-weight:500;
-}
+.test-card{background:#fff;border:1px solid var(--linea);padding:0;position:relative;overflow:hidden;}
 @media(max-width:560px){.test-grid{grid-template-columns:1fr;}}
+.test-video{position:relative;width:100%;aspect-ratio:9/16;background:#000;}
+.test-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
 /* ---- FACTURA / OFERTA ---- */
 .factura-wrap{margin-top:34px;display:flex;justify-content:center;}
@@ -198,11 +188,6 @@ section:last-of-type{border-bottom:none;}
   text-align:center;margin-top:10px;font-family:'DM Mono',monospace;
   font-size:10px;color:#9a917e;
 }
-.editable-flag{
-  margin-top:18px;font-family:'DM Mono',monospace;font-size:10.5px;
-  color:var(--rojo);text-align:center;max-width:440px;margin-left:auto;margin-right:auto;
-}
-
 /* ---- REGALO ---- */
 .regalo{background:var(--kraft);}
 .regalo-inner{display:flex;flex-wrap:wrap;gap:24px;align-items:center;}
@@ -375,27 +360,18 @@ footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
     <span class="eyebrow">Resultados reales</span>
     <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:540px;">El año pasado, 5 dueños lo hicieron en 3 meses</h2>
     <p style="margin:12px 0 20px;font-size:14px;color:#4a4338;">Mentoría intensiva 2025 con Mario. Resultados documentados en sus propios negocios.</p>
-    <div class="test-note">⚠ PLACEHOLDER — reemplazar con nombres, citas y resultados reales de los 5 alumnos de la mentoría antes de publicar. No usar datos inventados.</div>
     <div class="test-grid">
       <div class="test-card">
-        <div class="test-name">[Nombre del alumno 1] · [Ciudad / tipo de negocio]</div>
-        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
-        <div class="test-result">[Resultado medible, ej: redujo costo de plato en X%]</div>
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/m4n2Yf0znCY" title="Testimonio alumno 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       </div>
       <div class="test-card">
-        <div class="test-name">[Nombre del alumno 2] · [Ciudad / tipo de negocio]</div>
-        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
-        <div class="test-result">[Resultado medible]</div>
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/KYtmLD06gxU" title="Testimonio alumno 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       </div>
       <div class="test-card">
-        <div class="test-name">[Nombre del alumno 3] · [Ciudad / tipo de negocio]</div>
-        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
-        <div class="test-result">[Resultado medible]</div>
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/zhficsuW09U" title="Testimonio alumno 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       </div>
       <div class="test-card">
-        <div class="test-name">[Nombre del alumno 4] · [Ciudad / tipo de negocio]</div>
-        <div class="test-quote">"[Cita real del alumno sobre el cambio en su negocio]"</div>
-        <div class="test-result">[Resultado medible]</div>
+        <div class="test-video"><iframe src="https://www.youtube.com/embed/ssXhIn2MGDE" title="Testimonio alumno 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       </div>
     </div>
   </div>
@@ -432,7 +408,6 @@ footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
         </div>
       </div>
     </div>
-    <p class="editable-flag">⚠ Precio, moneda y link de pago son borrador — confirmar antes de publicar.</p>
   </div>
 </section>
 
