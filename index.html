@@ -3,471 +3,512 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GastroAcademy 2.0 — Cupo Fundador</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>GastroAcademy — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas</title>
+<meta name="description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy existe para que dejes de tomarlas solo.">
+<link rel="canonical" href="https://gastroconmario-oss.github.io/gastroacademy/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="GastroAcademy — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas">
+<meta property="og:description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy existe para que dejes de tomarlas solo.">
+<meta property="og:url" content="https://gastroconmario-oss.github.io/gastroacademy/">
+<meta property="og:image" content="https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GastroAcademy — Deja de tomar decisiones solo">
+<meta name="twitter:description" content="La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas.">
+<meta name="twitter:image" content="https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GastroAcademy",
+  "url": "https://gastroconmario-oss.github.io/gastroacademy/",
+  "logo": "https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg",
+  "sameAs": ["https://www.skool.com/gastroacademy-6773/about"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "GastroAcademy",
+  "description": "La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas — conversaciones semanales, expertos invitados y acceso directo a decisiones operativas reales.",
+  "provider": {
+    "@type": "Organization",
+    "name": "GastroAcademy",
+    "sameAs": "https://gastroconmario-oss.github.io/gastroacademy/"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --rojo:#C0392B;
-  --crema:#F5F2EC;
-  --tinta:#1A1612;
-  --kraft:#EAE2D0;
-  --verde:#2F5233;
-  --dorado:#B8902E;
-  --linea:#D8CFB8;
+  --bg:#FAFAF8;
+  --ink:#111111;
+  --ink-2:#5E5E5E;
+  --red:#B22222;
+  --red-hover:#911B1B;
+  --border:rgba(0,0,0,.08);
+  --card:#FFFFFF;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
-  background:var(--crema);
-  color:var(--tinta);
-  font-family:'DM Sans',sans-serif;
-  font-size:16px;
-  line-height:1.6;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:clamp(18px,2vw,21px);
+  line-height:1.8;
   -webkit-font-smoothing:antialiased;
 }
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+}
+a{color:inherit;}
+img{max-width:100%;display:block;}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
-h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:1.05;text-transform:uppercase;}
-.mono{font-family:'DM Mono',monospace;}
+.wrap-wide{max-width:1120px;margin:0 auto;padding:0 24px;}
 
-/* ---- top bar ---- */
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:var(--tinta);
-  border-bottom:2px solid var(--rojo);
-}
-.topbar-inner{
-  max-width:760px;margin:0 auto;padding:10px 24px;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-}
-.topbar-logo{
-  font-family:'Bebas Neue',sans-serif;color:var(--crema);
-  font-size:18px;letter-spacing:.08em;
-}
-.topbar-logo span{color:var(--rojo);}
-.topbar-cta{
-  font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-  color:var(--tinta);background:var(--crema);
-  padding:8px 14px;border-radius:3px;text-decoration:none;
-  letter-spacing:.04em;white-space:nowrap;
-}
+h1,h2,h3{font-weight:700;line-height:1.05;letter-spacing:-.01em;}
+h1{font-size:clamp(36px,6.5vw,64px);}
+h2{font-size:clamp(28px,4.5vw,40px);margin-bottom:40px;}
+h3{font-size:clamp(22px,3vw,30px);margin-bottom:20px;}
+p{margin-bottom:20px;color:var(--ink);}
+p.lead{color:var(--ink-2);}
 
-/* ---- generic section rhythm ---- */
-section{padding:64px 0;border-bottom:1px solid var(--linea);}
-section:last-of-type{border-bottom:none;}
-.eyebrow{
-  font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);
-  display:inline-block;margin-bottom:14px;
-  border:1px solid var(--rojo);padding:4px 10px;border-radius:2px;
+section{padding:clamp(64px,14vw,160px) 0;}
+.block + .block{margin-top:clamp(48px,8vw,80px);}
+
+.mark{
+  position:absolute;top:28px;left:24px;z-index:5;
+  font-weight:700;font-size:15px;letter-spacing:-.01em;
 }
-.fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.mark span{color:var(--red);}
+
+/* fade-up */
+.fade{opacity:0;transform:translateY(40px);transition:opacity .3s ease-out,transform .3s ease-out;}
 .fade.in{opacity:1;transform:translateY(0);}
 
-/* ---- HERO ---- */
-.hero{padding:72px 0 56px;border-bottom:1px solid var(--linea);}
-.hero h1{font-size:clamp(34px,7vw,54px);margin-bottom:18px;}
-.hero h1 .accent{color:var(--rojo);}
-.hero-sub{font-size:17px;color:#3a342c;max-width:560px;margin-bottom:30px;}
-.hero-sub strong{color:var(--tinta);}
-.cta-btn{
-  display:inline-block;background:var(--rojo);color:var(--crema);
-  font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.04em;
-  padding:16px 30px;border-radius:3px;text-decoration:none;
-  border:2px solid var(--rojo);transition:background .15s,color .15s;
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--red);color:#fff;
+  font-weight:600;font-size:17px;
+  padding:18px 36px;border-radius:16px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:transform .2s ease,background .2s ease;
 }
-.cta-btn:hover{background:transparent;color:var(--rojo);}
-.cta-micro{
-  display:block;margin-top:12px;font-family:'DM Mono',monospace;
-  font-size:11.5px;color:#6b6253;letter-spacing:.03em;
-}
+.btn:hover{background:var(--red-hover);transform:translateY(-2px);}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
 
-/* ---- STAT TICKETS ---- */
-.stats-intro{font-size:16px;margin-bottom:30px;max-width:520px;}
-.ticket-row{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;}
-.ticket{
-  position:relative;background:#fff;border:1px solid var(--linea);
-  border-top:3px solid var(--rojo);padding:20px 18px 26px;
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:120px 0 80px;position:relative;
 }
-.ticket::after{
-  content:'';position:absolute;left:0;right:0;bottom:-1px;height:10px;
-  background:
-    linear-gradient(135deg,var(--crema) 6px,transparent 0) 0 0,
-    linear-gradient(225deg,var(--crema) 6px,transparent 0) 0 0;
-  background-size:12px 12px;background-repeat:repeat-x;
+.hero-grid{display:grid;grid-template-columns:1fr;gap:56px;align-items:center;}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:64px;}}
+.hero-copy p{font-size:clamp(18px,2vw,21px);}
+.hero-beats{list-style:none;color:var(--ink-2);margin:8px 0 28px;}
+.hero-beats li{margin-bottom:10px;}
+.hero-brand{margin-top:12px;}
+.hero-brand strong{font-weight:800;}
+.hero-media{
+  position:relative;border-radius:24px;overflow:hidden;
+  aspect-ratio:4/5;background:#e8e6df;
 }
-.ticket-num{font-family:'DM Mono',monospace;font-weight:500;font-size:30px;color:var(--tinta);display:block;}
-.ticket-label{font-size:12.5px;color:#5a5246;margin-top:6px;line-height:1.5;}
-.ticket-src{font-family:'DM Mono',monospace;font-size:9.5px;color:#9a917e;margin-top:8px;display:block;letter-spacing:.02em;}
-.stats-close{margin-top:30px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--tinta);max-width:480px;}
-.stats-close span{color:var(--rojo);}
+.hero-media img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+.hero-media:hover img{transform:scale(1.01);}
 
-@media(max-width:540px){.ticket-row{grid-template-columns:1fr 1fr;}}
+/* elegant number (used sparingly) */
+.figure{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:8px 0 28px;}
+.figure-num{font-size:clamp(40px,6vw,56px);font-weight:800;color:var(--red);letter-spacing:-.02em;}
+.figure-label{color:var(--ink-2);font-size:16px;}
 
-/* ---- 4 FUGAS ---- */
-.fugas-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
-.fuga{background:var(--kraft);border:1px solid var(--linea);padding:20px;}
-.fuga-tag{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px;display:block;}
-.fuga h3{font-size:21px;margin-bottom:8px;}
-.fuga p{font-size:13.5px;color:#4a4338;}
-@media(max-width:560px){.fugas-grid{grid-template-columns:1fr;}}
-
-/* ---- QUÉ ES ---- */
-.que-es h2{font-size:clamp(26px,5.5vw,36px);margin-bottom:18px;max-width:560px;}
-.que-es p{font-size:16px;color:#3a342c;margin-bottom:14px;max-width:560px;}
-.live-badge{
-  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
-  background:var(--tinta);color:var(--crema);padding:10px 16px;
-  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.03em;
+/* video lite */
+.video-wrap{display:flex;justify-content:center;margin:56px 0;}
+.video-lite{
+  position:relative;width:240px;aspect-ratio:9/16;
+  border-radius:24px;overflow:hidden;border:none;padding:0;cursor:pointer;
+  background-size:cover;background-position:center;
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
 }
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--rojo);animation:pulse 1.6s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.photo-slot{margin:24px 0 0;border:1px solid var(--linea);background:#fff;}
-.photo-slot img{display:block;width:100%;max-height:420px;object-fit:cover;}
-.photo-slot figcaption{
-  padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;
-  color:#9a917e;letter-spacing:.03em;border-top:1px solid var(--linea);
-}
-
-/* ---- ROADMAP ---- */
-.roadmap{margin-top:30px;display:flex;flex-direction:column;gap:0;}
-.week{display:flex;gap:18px;padding:20px 0;border-top:1px solid var(--linea);}
-.week:last-child{border-bottom:1px solid var(--linea);}
-.week-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--rojo);width:54px;flex-shrink:0;line-height:1;}
-.week-body h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15.5px;text-transform:none;letter-spacing:0;margin-bottom:5px;}
-.week-body p{font-size:13.5px;color:#4a4338;}
-.week-guest{
-  display:inline-block;margin-top:8px;font-family:'DM Mono',monospace;
-  font-size:10.5px;color:var(--verde);background:#e7ede6;
-  padding:3px 8px;border-radius:2px;letter-spacing:.02em;
-}
-
-/* ---- TESTIMONIOS ---- */
-.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.test-card{background:#fff;border:1px solid var(--linea);padding:0;position:relative;overflow:hidden;}
-@media(max-width:560px){.test-grid{grid-template-columns:1fr;}}
-.test-video{position:relative;width:100%;aspect-ratio:9/16;background:#000;}
-.test-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-
-/* ---- FACTURA / OFERTA ---- */
-.factura-wrap{margin-top:34px;display:flex;justify-content:center;}
-.factura{
-  width:100%;max-width:440px;background:#fffdf8;
-  border:1.5px solid var(--tinta);position:relative;
-  padding:0;
-}
-.factura-head{
-  background:var(--tinta);color:var(--crema);padding:16px 20px;
-  display:flex;justify-content:space-between;align-items:baseline;
-}
-.factura-head .ft{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;}
-.factura-head .fn{font-family:'DM Mono',monospace;font-size:10.5px;color:#bdb6a3;}
-.factura-body{padding:22px 24px;}
-.factura-row{
-  display:flex;justify-content:space-between;gap:10px;
-  font-family:'DM Mono',monospace;font-size:13px;
-  padding:9px 0;border-bottom:1px dotted #cbc2ab;color:#3a342c;
-}
-.factura-row.head{font-weight:500;color:#9a917e;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--tinta);}
-.price-block{margin:18px 0;text-align:center;}
-.price-old{font-family:'DM Mono',monospace;font-size:14px;color:#9a917e;text-decoration:line-through;}
-.price-new{font-family:'Bebas Neue',sans-serif;font-size:46px;color:var(--rojo);line-height:1;margin-top:4px;}
-.price-new span{font-family:'DM Mono',monospace;font-size:14px;color:var(--tinta);vertical-align:middle;}
-.price-lock{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--verde);margin-top:4px;}
-.stamp{
-  position:absolute;top:64px;right:-10px;
-  font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--rojo);
-  border:2.5px solid var(--rojo);padding:6px 12px;
-  transform:rotate(9deg);letter-spacing:.06em;background:rgba(255,255,255,.85);
-}
-.factura-foot{padding:0 24px 22px;}
-.factura-cta{
-  display:block;text-align:center;background:var(--rojo);color:var(--crema);
-  font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em;
-  padding:14px;text-decoration:none;margin-top:6px;
-}
-.factura-note{
-  text-align:center;margin-top:10px;font-family:'DM Mono',monospace;
-  font-size:10px;color:#9a917e;
-}
-/* ---- REGALO ---- */
-.regalo{background:var(--kraft);}
-.regalo-inner{display:flex;flex-wrap:wrap;gap:24px;align-items:center;}
-.regalo-icon{
-  width:64px;height:64px;flex-shrink:0;border:2px solid var(--tinta);
+.video-lite:hover{transform:scale(1.01);}
+.video-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.play-icon{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.92);
   display:flex;align-items:center;justify-content:center;
-  font-family:'DM Mono',monospace;font-size:11px;text-align:center;line-height:1.3;
 }
-.regalo-text{flex:1;min-width:220px;}
-.regalo-text h3{font-size:24px;margin-bottom:8px;}
-.regalo-text p{font-size:14px;color:#4a4338;margin-bottom:14px;}
-.regalo-cta{
-  display:inline-block;border:2px solid var(--tinta);color:var(--tinta);
-  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.03em;
-  padding:10px 16px;text-decoration:none;
+.play-icon svg{width:20px;height:20px;fill:var(--ink);margin-left:3px;}
+.video-lite:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+/* La Grasa full-bleed */
+.grasa{position:relative;min-height:88vh;display:flex;align-items:flex-end;padding:0;overflow:hidden;}
+.grasa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.grasa::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.15) 55%,rgba(0,0,0,0) 80%);
+}
+.grasa-copy{position:relative;z-index:2;color:#fff;padding:56px 0;}
+.grasa-copy .wrap{max-width:640px;}
+.grasa-copy p{font-size:15.5px;color:rgba(255,255,255,.88);margin-bottom:12px;}
+.grasa-copy p:last-of-type{margin-bottom:0;}
+
+/* Julio / roadmap block */
+.julio-beat{margin-bottom:28px;}
+.julio-beat .k{
+  display:block;font-weight:700;font-size:14px;color:var(--red);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;
 }
 
-/* ---- FAQ ---- */
-.faq-item{padding:18px 0;border-top:1px solid var(--linea);}
-.faq-item:last-child{border-bottom:1px solid var(--linea);}
-.faq-q{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;}
-.faq-a{font-size:13.5px;color:#4a4338;}
+/* factura — apple wallet style */
+.factura-wrap{display:flex;justify-content:center;margin-top:24px;}
+.factura{
+  width:100%;max-width:420px;
+  background:linear-gradient(155deg,#1c1c1c 0%,#0c0c0c 100%);
+  color:#fff;border-radius:24px;padding:32px 30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+.factura-kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
+.factura h3{color:#fff;font-size:26px;margin-bottom:22px;}
+.factura-list{list-style:none;}
+.factura-list li{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 0;border-top:1px solid rgba(255,255,255,.1);
+  font-size:15.5px;color:rgba(255,255,255,.92);
+}
+.factura-list li:first-child{border-top:none;}
+.factura-list li svg{width:16px;height:16px;flex-shrink:0;stroke:var(--red);}
+.factura-price{margin:26px 0 22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);}
+.factura-price .amount{font-size:44px;font-weight:800;letter-spacing:-.02em;}
+.factura-price .amount span{font-size:15px;font-weight:500;color:rgba(255,255,255,.6);}
+.factura-price .terms{font-size:13.5px;color:rgba(255,255,255,.55);margin-top:6px;}
+.factura .btn{width:100%;justify-content:center;}
 
-/* ---- FINAL CTA ---- */
-.final{background:var(--tinta);color:var(--crema);text-align:center;border-bottom:none;}
-.final h2{font-size:clamp(26px,6vw,38px);max-width:600px;margin:0 auto 22px;}
-.final .cta-btn{font-size:21px;padding:18px 34px;}
-.final .cta-micro{color:#a39c8a;}
+/* FAQ accordion */
+.faq-item{border-top:1px solid var(--border);padding:22px 0;}
+.faq-item:last-child{border-bottom:1px solid var(--border);}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-weight:600;font-size:17px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .chev{transition:transform .2s ease;flex-shrink:0;}
+.faq-item[open] summary .chev{transform:rotate(180deg);}
+.faq-item summary .chev svg{width:18px;height:18px;stroke:var(--ink-2);}
+.faq-a{margin-top:14px;color:var(--ink-2);font-size:16.5px;}
+.faq-item:focus-within summary{outline:none;}
+.faq-item summary:focus-visible{outline:2px solid var(--red);outline-offset:4px;border-radius:4px;}
 
-footer{padding:30px 0;text-align:center;}
-footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
+/* final */
+.final{text-align:center;}
+.final .wrap{max-width:640px;}
+.final .btn{margin-top:8px;}
+
+footer{padding:56px 0;border-top:1px solid var(--border);}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
+footer .fmark{font-weight:700;font-size:14px;}
+footer .fmark span{color:var(--red);}
+footer nav{display:flex;gap:20px;}
+footer a{font-size:13.5px;color:var(--ink-2);text-decoration:none;}
+footer a:hover{color:var(--ink);}
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="topbar-logo">GASTRO<span>ACADEMY</span></div>
-    <a href="#oferta" class="topbar-cta">CUPO FUNDADOR</a>
-  </div>
-</div>
+<span class="mark">GASTRO<span>ACADEMY</span></span>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">GastroAcademy 2.0 · Primer cupo fundador</span>
-    <h1>Tu restaurante no se está ahogando por falta de clientes.<br><span class="accent">Se está ahogando por falta de sistema.</span></h1>
-    <p class="hero-sub">Los costos de operar un restaurante en Colombia subieron <strong>casi 10% este año</strong>. 6 de cada 10 negocios vendieron igual o menos que el año pasado. Trabajar más duro ya no alcanza — hace falta un sistema que aguante la presión.</p>
-    <a href="#oferta" class="cta-btn">QUIERO MI CUPO FUNDADOR →</a>
-    <span class="cta-micro">Cupos limitados · Precio fundador bloqueado para siempre</span>
-  </div>
-</section>
-
-<!-- DIAGNÓSTICO MACRO -->
-<section class="fade">
-  <div class="wrap">
-    <span class="eyebrow">El contexto real</span>
-    <p class="stats-intro">Mientras tú peleas con tu operación día a día, esto está pasando en el sector — y no se arregla solo:</p>
-    <div class="ticket-row">
-      <div class="ticket">
-        <span class="ticket-num">9.6%</span>
-        <span class="ticket-label">Subida anual en costos de restaurantes y hoteles en Colombia — casi el doble que la inflación general del país.</span>
-        <span class="ticket-src">FUENTE: DANE, 2026</span>
+  <div class="wrap-wide">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p>No es la inflación.</p>
+        <p>Ni Rappi.</p>
+        <p>Ni los impuestos.</p>
+        <p>Ni siquiera la competencia.</p>
+        <p>La mayoría de restaurantes no desaparecen por una gran razón.</p>
+        <p>Desaparecen por cientos de pequeñas decisiones que parecían insignificantes.</p>
+        <ul class="hero-beats">
+          <li>Una receta mal costeada.</li>
+          <li>Un proveedor que nunca renegociaste.</li>
+          <li>Un empleado que nunca debió entrar.</li>
+          <li>Una cocina sin procesos.</li>
+          <li>Una promoción que regaló utilidad.</li>
+          <li>Un video que nunca publicaste.</li>
+          <li>Un número que nunca revisaste.</li>
+        </ul>
+        <p>Y cuando esas pequeñas decisiones se acumulan... el restaurante sigue abierto.</p>
+        <p>Pero deja de crecer.</p>
+        <p>Mientras tanto... hay otros restaurantes que enfrentan exactamente los mismos problemas.</p>
+        <p>La diferencia es que aprendieron a tomar mejores decisiones. No porque fueran más inteligentes. Sino porque dejaron de hacerlo solos.</p>
+        <div class="hero-brand">
+          <p><strong>Bienvenido a GastroAcademy.</strong></p>
+          <p class="lead">La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas. No únicamente restaurantes.</p>
+        </div>
+        <a href="#oferta" class="btn">Quiero ser parte desde el comienzo →</a>
       </div>
-      <div class="ticket">
-        <span class="ticket-num">66%</span>
-        <span class="ticket-label">De los negocios colombianos vendió igual o menos que el año anterior.</span>
-        <span class="ticket-src">FUENTE: FENALCO, MAR. 2026</span>
-      </div>
-      <div class="ticket">
-        <span class="ticket-num">~30%</span>
-        <span class="ticket-label">Subieron los costos laborales en restaurantes: turnos, nómina, prestaciones.</span>
-        <span class="ticket-src">FUENTE: ACODRÉS, 2026</span>
-      </div>
-      <div class="ticket">
-        <span class="ticket-num">6→12</span>
-        <span class="ticket-label">Meses que hoy puede tomar llegar al punto de equilibrio — antes tomaba la mitad.</span>
-        <span class="ticket-src">FUENTE: ACODRÉS BOGOTÁ</span>
-      </div>
-    </div>
-    <p class="stats-close">Esto no se arregla vendiendo más. <span>Se arregla operando distinto.</span></p>
-  </div>
-</section>
-
-<!-- 4 FUGAS -->
-<section class="fade">
-  <div class="wrap">
-    <span class="eyebrow">El diagnóstico</span>
-    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:520px;">¿En cuál de estas te estás ahogando?</h2>
-    <div class="fugas-grid">
-      <div class="fuga">
-        <span class="fuga-tag">Procesos</span>
-        <h3>Caos operativo diario</h3>
-        <p>Si tú no estás, nadie sabe qué hacer. Apagas incendios en vez de dirigir.</p>
-      </div>
-      <div class="fuga">
-        <span class="fuga-tag">Personal</span>
-        <h3>Rotación constante</h3>
-        <p>Entrenas gente y se va. O se queda, pero hace lo mínimo porque nadie supervisa.</p>
-      </div>
-      <div class="fuga">
-        <span class="fuga-tag">Marketing</span>
-        <h3>Vendes, pero no te recuerdan</h3>
-        <p>Estás lleno algunos días, pero no estás posicionado en la mente de la gente.</p>
-      </div>
-      <div class="fuga">
-        <span class="fuga-tag">Costos</span>
-        <h3>No sabes cuánto ganas de verdad</h3>
-        <p>Facturas bien, pero a fin de mes la plata no aparece. Sin números no hay empresa seria.</p>
+      <div class="hero-media">
+        <img src="mario-hero.jpg" alt="Mario, fundador de GastroAcademy">
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUÉ ES -->
-<section class="que-es fade">
+<!-- EL PROBLEMA -->
+<section class="fade">
   <div class="wrap">
-    <span class="eyebrow">Qué es GastroAcademy 2.0</span>
-    <h2>No es un curso. Es el sistema que Mario usa en sus propios restaurantes.</h2>
-    <p>Mario lleva años operando varios restaurantes en Medellín. No enseña teoría de servilleta — enseña lo que usa esta semana, en su propia operación, para que el negocio funcione sin que él tenga que estar metido en todo.</p>
-    <p>Mientras lees esto, Mario está abriendo <strong>La Grasa</strong>, su restaurante más reciente. No es un caso de estudio de hace cinco años — es la prueba en vivo de que el sistema funciona, documentada desde la construcción hasta la apertura.</p>
-    <span class="live-badge"><span class="live-dot"></span> La Grasa abre estas semanas — síguelo en vivo desde adentro</span>
-    <figure class="photo-slot">
-      <img src="la-grasa.jpg" alt="Fachada de La Grasa, el nuevo restaurante de Mario, de noche">
-      <figcaption>La Grasa · Steak House — Medellín</figcaption>
-    </figure>
+    <p>Hay algo curioso en esta industria.</p>
+    <p>Todos estudian para cocinar. Para hacer postres. Para servir. Para preparar café.</p>
+    <p>Pero muy pocos estudian cómo dirigir un restaurante una vez que abren.</p>
+    <p>Entonces empieza el verdadero curso. El más caro de todos.</p>
+    <p><strong>Aprender perdiendo dinero.</strong></p>
+    <p>Cada error cuesta. Cada decisión enseña. Pero también factura.</p>
+    <p>Y esa forma de aprender puede tomar años.</p>
   </div>
 </section>
 
-<!-- MES 1 -->
+<!-- CAMBIO DE PARADIGMA -->
 <section class="fade">
   <div class="wrap">
-    <span class="eyebrow">Tu primer mes adentro</span>
-    <h2 style="font-size:clamp(26px,5.5vw,34px);">Cuatro semanas, un sistema completo</h2>
-    <div class="roadmap">
-      <div class="week">
-        <span class="week-num">01</span>
-        <div class="week-body">
-          <h3>Mario te conoce</h3>
-          <p>Live de bienvenida. Mario habla en vivo con la comunidad para entender en qué etapa está cada quién — el diagnóstico arranca contigo, no con una lección genérica.</p>
-        </div>
-      </div>
-      <div class="week">
-        <span class="week-num">02</span>
-        <div class="week-body">
-          <h3>Inventarios y costeo real</h3>
-          <p>Cómo saber cuánto te cuesta cada plato, dónde se filtra la plata y cómo montar un control de inventario que no dependa de tu memoria.</p>
-          <span class="week-guest">+ Charla con el contador de Mario</span>
-        </div>
-      </div>
-      <div class="week">
-        <span class="week-num">03</span>
-        <div class="week-body">
-          <h3>Marketing orgánico que sí vende</h3>
-          <p>Cómo posicionarte sin depender de pauta — contenido, presencia y reputación que llenan mesas de verdad.</p>
-          <span class="week-guest">+ Charla con el equipo de mercadeo de Mario</span>
-        </div>
-      </div>
-      <div class="week">
-        <span class="week-num">04</span>
-        <div class="week-body">
-          <h3>Implementación + Q&A en vivo</h3>
-          <p>Aplicas lo del mes a tu negocio real. Mario responde tus casos puntuales en vivo.</p>
-        </div>
-      </div>
+    <p>La mayoría cree que un restaurante exitoso vende mucho.</p>
+    <p>Nosotros hemos aprendido otra cosa.</p>
+    <p><strong>Los restaurantes exitosos toman mejores decisiones.</strong></p>
+    <p>Porque vender mucho no garantiza ganar dinero. Contratar más gente no garantiza mejor servicio. Publicar más videos no garantiza más clientes. Trabajar más horas no garantiza crecer.</p>
+    <p>La diferencia casi siempre está en el criterio.</p>
+    <p>Y el criterio se construye escuchando a quienes ya recorrieron ese camino.</p>
+  </div>
+</section>
+
+<div class="video-wrap fade">
+  <button class="video-lite" data-id="m4n2Yf0znCY" aria-label="Reproducir testimonio en video" style="background-image:url('https://img.youtube.com/vi/m4n2Yf0znCY/hqdefault.jpg')">
+    <span class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+  </button>
+</div>
+
+<!-- LA HISTORIA -->
+<section class="fade">
+  <div class="wrap">
+    <p>Durante años vimos algo repetirse.</p>
+    <p>Dueños talentosos. Con buena comida. Con clientes. Con pasión.</p>
+    <p>Pero completamente agotados.</p>
+    <p>Su restaurante dependía de ellos para todo.</p>
+    <p>Si faltaban un día... todo se detenía.</p>
+    <p>No era falta de esfuerzo. Era falta de sistema.</p>
+    <p>Y eso nos hizo una pregunta.</p>
+    <p><strong>¿Por qué los dueños de restaurantes siguen tomando las decisiones más importantes completamente solos?</strong></p>
+  </div>
+</section>
+
+<!-- NACE GASTROACADEMY -->
+<section class="fade">
+  <div class="wrap">
+    <p>Así nació GastroAcademy.</p>
+    <p>No como un curso. No como una mentoría. Ni como una colección de clases.</p>
+    <p>Sino como el lugar donde cada semana nos sentamos a conversar sobre lo que realmente está ocurriendo dentro de nuestros restaurantes.</p>
+    <p>No hablamos de teorías. Hablamos de decisiones.</p>
+    <p>Las que tomamos ayer. Las que probablemente tú también tendrás que tomar mañana.</p>
+  </div>
+</section>
+
+<div class="video-wrap fade">
+  <button class="video-lite" data-id="KYtmLD06gxU" aria-label="Reproducir testimonio en video" style="background-image:url('https://img.youtube.com/vi/KYtmLD06gxU/hqdefault.jpg')">
+    <span class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+  </button>
+</div>
+
+<!-- LA DIFERENCIA / LA GRASA -->
+<section class="grasa fade">
+  <img src="la-grasa.jpg" alt="Fachada de La Grasa, el nuevo restaurante de Mario, de noche">
+  <div class="grasa-copy">
+    <div class="wrap">
+      <p>Mientras lees esta página... Mario sigue operando restaurantes. Sigue contratando personas. Sigue revisando costos. Sigue creando campañas. Sigue resolviendo problemas.</p>
+      <p>Y muy pronto abrirá un nuevo restaurante. <strong>La Grasa.</strong></p>
+      <p>Eso significa que las conversaciones dentro de GastroAcademy nunca salen de un libro. Salen de la vida real.</p>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
+<!-- LA COMUNIDAD -->
 <section class="fade">
   <div class="wrap">
-    <span class="eyebrow">Resultados reales</span>
-    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:540px;">El año pasado, 5 dueños lo hicieron en 3 meses</h2>
-    <p style="margin:12px 0 20px;font-size:14px;color:#4a4338;">Mentoría intensiva 2025 con Mario. Resultados documentados en sus propios negocios.</p>
-    <div class="test-grid">
-      <div class="test-card">
-        <div class="test-video"><iframe src="https://www.youtube.com/embed/m4n2Yf0znCY" title="Testimonio alumno 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      </div>
-      <div class="test-card">
-        <div class="test-video"><iframe src="https://www.youtube.com/embed/KYtmLD06gxU" title="Testimonio alumno 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      </div>
-      <div class="test-card">
-        <div class="test-video"><iframe src="https://www.youtube.com/embed/zhficsuW09U" title="Testimonio alumno 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      </div>
-      <div class="test-card">
-        <div class="test-video"><iframe src="https://www.youtube.com/embed/ssXhIn2MGDE" title="Testimonio alumno 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      </div>
-    </div>
+    <p>Imagina poder sentarte una vez por semana con personas que viven exactamente los mismos desafíos que tú.</p>
+    <p>Mario. Su chef corporativo. Su gerente. Su equipo creativo. Especialistas invitados. Y otros empresarios gastronómicos.</p>
+    <p>No para escuchar discursos. Sino para entender qué está funcionando. Qué dejó de funcionar. Y qué decisiones están tomando hoy.</p>
+    <p>Porque eso cambia mucho más un restaurante que cualquier video pregrabado.</p>
   </div>
 </section>
 
-<!-- OFERTA -->
+<!-- JULIO -->
+<section class="fade">
+  <div class="wrap">
+    <h2>Julio</h2>
+    <p>Julio no es el comienzo de un curso.</p>
+    <p><strong>Es el comienzo de una conversación.</strong></p>
+    <div class="julio-beat">
+      <span class="k">Mario</span>
+      <p>Abrirá la comunidad compartiendo lo que ha visto cambiar en la industria gastronómica durante los últimos años. Y hacia dónde cree que va todo.</p>
+    </div>
+    <div class="julio-beat">
+      <span class="k">El chef corporativo</span>
+      <p>Mostrará por qué el orden dentro de una cocina termina reflejándose directamente en la rentabilidad del negocio.</p>
+    </div>
+    <div class="julio-beat">
+      <span class="k">Contenido</span>
+      <p>Hablaremos de algo que hoy ningún restaurante puede ignorar: cómo crear contenido que haga que las personas quieran visitarte antes incluso de probar tu comida.</p>
+    </div>
+    <p class="lead">No queremos llenar un calendario. Queremos ayudarte a tomar mejores decisiones. Semana tras semana.</p>
+  </div>
+</section>
+
+<!-- LA COMUNIDAD CRECE -->
+<section class="fade">
+  <div class="wrap">
+    <p>Lo interesante es que GastroAcademy nunca será exactamente igual.</p>
+    <p>Cada mes habrá nuevas conversaciones. Nuevos invitados. Nuevos aprendizajes. Nuevos errores compartidos. Nuevas soluciones.</p>
+    <p>Mientras tu restaurante evoluciona... la comunidad también.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS (sin título, intercalados) -->
+<section class="fade">
+  <div class="wrap">
+    <p>Lo mejor es que esto ya empezó a pasar.</p>
+    <p>El año pasado abrimos por primera vez las puertas. No era una membresía. Era una mentoría intensiva.</p>
+    <p>Y hubo algo que empezó a repetirse. Las personas dejaban de buscar respuestas rápidas. Y comenzaban a tomar mejores decisiones.</p>
+  </div>
+</section>
+
+<div class="video-wrap fade">
+  <button class="video-lite" data-id="zhficsuW09U" aria-label="Reproducir testimonio en video" style="background-image:url('https://img.youtube.com/vi/zhficsuW09U/hqdefault.jpg')">
+    <span class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+  </button>
+</div>
+
+<section class="fade" style="padding-top:0;">
+  <div class="wrap">
+    <p class="lead">Y luego otro dueño, en otro negocio, llegando exactamente a la misma conclusión.</p>
+  </div>
+</section>
+
+<div class="video-wrap fade">
+  <button class="video-lite" data-id="ssXhIn2MGDE" aria-label="Reproducir testimonio en video" style="background-image:url('https://img.youtube.com/vi/ssXhIn2MGDE/hqdefault.jpg')">
+    <span class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+  </button>
+</div>
+
+<!-- LOS FUNDADORES -->
+<section class="fade">
+  <div class="wrap">
+    <p>Dentro de algunos años probablemente habrá cientos de empresarios dentro de GastroAcademy.</p>
+    <p>Pero solamente cincuenta personas podrán decir:</p>
+    <p><strong>"Yo estuve cuando todo comenzó."</strong></p>
+    <p>Por eso decidimos hacer algo especial.</p>
+    <p>Los primeros cincuenta miembros serán invitados a un encuentro presencial con Mario. Sin cámaras. Sin escenario. Sin filtros. Simplemente una conversación entre personas que decidieron construir mejores restaurantes.</p>
+    <p>Ese momento nunca volverá a repetirse.</p>
+  </div>
+</section>
+
+<!-- EL PRECIO + FACTURA -->
 <section class="fade" id="oferta">
   <div class="wrap">
-    <span class="eyebrow">La oferta fundador</span>
-    <h2 style="font-size:clamp(26px,5.5vw,34px);max-width:540px;">Entra ahora, paga menos para siempre</h2>
+    <p>Un restaurante puede perder mucho más de 27 dólares en una sola decisión.</p>
+    <p>Una receta mal costeada. Un proveedor equivocado. Una promoción mal diseñada. Un desperdicio que nadie detectó.</p>
+    <p>Si una sola conversación evita uno de esos errores... la membresía ya se pagó sola.</p>
+
     <div class="factura-wrap">
       <div class="factura">
-        <div class="stamp">FUNDADOR</div>
-        <div class="factura-head">
-          <span class="ft">FACTURA</span>
-          <span class="fn">N° 001 · CUPO FUNDADOR</span>
+        <div class="factura-kicker">Tu pase para entrar</div>
+        <h3>GastroAcademy</h3>
+        <ul class="factura-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Acceso inmediato</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Conversaciones semanales</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Expertos invitados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Comunidad privada</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Evento fundador (primeros 50)</li>
+        </ul>
+        <div class="factura-price">
+          <div class="amount">$27<span> USD / mes</span></div>
+          <div class="terms">Sin permanencia. Sin contratos. Simplemente quédate mientras siga aportándole valor a tu restaurante.</div>
         </div>
-        <div class="factura-body">
-          <div class="factura-row head"><span>Concepto</span><span>Incluye</span></div>
-          <div class="factura-row"><span>Mes 1 completo</span><span>4 semanas en vivo</span></div>
-          <div class="factura-row"><span>Comunidad privada</span><span>WhatsApp + Skool</span></div>
-          <div class="factura-row"><span>Charlas invitadas</span><span>Equipo de Mario</span></div>
-          <div class="factura-row"><span>Regalo de bienvenida</span><span>Plantilla Excel</span></div>
-          <div class="factura-row"><span>Precio bloqueado</span><span>De por vida</span></div>
-          <div class="price-block">
-            <div class="price-old">$39 USD/mes</div>
-            <div class="price-new">$27<span>USD/mes</span></div>
-            <div class="price-lock">✓ Precio fundador — bloqueado para siempre</div>
-          </div>
-        </div>
-        <div class="factura-foot">
-          <a href="https://www.skool.com/gastroacademy-6773/about" class="factura-cta">UNIRME EN SKOOL →</a>
-          <div class="factura-note">Te lleva a Skool para completar tu inscripción · Cupos limitados</div>
-        </div>
+        <a href="https://www.skool.com/gastroacademy-6773/about" class="btn">Quiero entrar a GastroAcademy →</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- 
-<section class="regalo fade">
-  <div class="wrap">
-    <div class="regalo-inner">
-      <div class="regalo-icon">XLSX<br>GRATIS</div>
-      <div class="regalo-text">
-        <h3>Antes de entrar, llévate esto</h3>
-        <p>Una plantilla de costeo e inventario en Excel — la misma lógica que usa Mario para saber, plato por plato, cuánto gana de verdad. Sin números no hay empresa seria.</p>
-        <a href="https://www.skool.com/gastroacademy-6773/about" class="regalo-cta">DESCARGAR PLANTILLA GRATIS →</a>
-      </div>
-    </div>
-  </div>
-</section>
-  -->
-
 
 <!-- FAQ -->
 <section class="fade">
   <div class="wrap">
-    <span class="eyebrow">Antes de entrar</span>
-    <div class="faq-item">
-      <div class="faq-q">¿Necesito experiencia previa?</div>
-      <div class="faq-a">No. GastroAcademy 2.0 está pensado para dueños que ya tienen un negocio corriendo, aunque sea pequeño o desordenado. Si ya estás operando, este sistema es para ti.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Qué es Skool?</div>
-      <div class="faq-a">Es la app donde vive toda la comunidad — ahí quedan las clases grabadas, el calendario de las lives, las charlas con Mario y el resto de dueños, y tu progreso mes a mes. Se instala en el celular como cualquier otra app: entras, ves qué hay nuevo y ya. Nada de perseguir archivos en un Drive ni mensajes perdidos en WhatsApp — es un solo lugar, hecho para esto.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Qué pasa si no puedo estar en las lives?</div>
-      <div class="faq-a">Quedan grabadas dentro de la comunidad. Pero el valor real está en estar presente — son sesiones de trabajo, no solo charlas.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Cuándo cierra el cupo fundador?</div>
-      <div class="faq-a">El precio fundador está ligado a la apertura de La Grasa. Una vez abra, el cupo y el precio cambian.</div>
-    </div>
+    <h2>Antes de entrar</h2>
+
+    <details class="faq-item">
+      <summary>¿Necesito experiencia previa?
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="faq-a">No. GastroAcademy está pensada para dueños que ya tienen un negocio corriendo, aunque sea pequeño o desordenado. Si ya estás operando, esto es para ti.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué es Skool?
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="faq-a">Es la app donde vive la comunidad — clases, calendario de conversaciones en vivo y el resto de dueños, todo en un solo lugar que revisas desde el celular como cualquier otra app.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué pasa si no puedo estar en las conversaciones en vivo?
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="faq-a">Quedan grabadas dentro de la comunidad. Pero el valor real está en estar presente — son conversaciones de trabajo, no charlas para ver en piloto automático.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Cuándo cierra el precio fundador?
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="faq-a">Es solo para los primeros 50 dueños que entren, y también está ligado a la apertura de La Grasa — lo que pase primero, cierra el cupo.</div>
+    </details>
   </div>
 </section>
 
-<!-- FINAL -->
+<!-- CIERRE -->
 <section class="final fade">
   <div class="wrap">
-    <h2>La Grasa abre esta semana.<br>Tu sistema también puede empezar ahora.</h2>
-    <a href="#oferta" class="cta-btn">QUIERO MI CUPO FUNDADOR →</a>
-    <span class="cta-micro">Cupos limitados · Precio fundador bloqueado para siempre</span>
+    <p>Hay personas que seguirán aprendiendo únicamente cuando algo salga mal.</p>
+    <p>Y está bien. Nosotros también empezamos así.</p>
+    <p>Pero llega un momento en el que entiendes que los errores más costosos casi siempre pudieron evitarse con la conversación correcta.</p>
+    <p>Por eso existe GastroAcademy.</p>
+    <p>No para enseñarte cómo abrir un restaurante. Sino para acompañarte mientras construyes uno que pueda crecer durante muchos años.</p>
+    <p><strong>Nos vemos dentro.</strong></p>
+    <a href="#oferta" class="btn">Quiero entrar a GastroAcademy →</a>
   </div>
 </section>
 
 <footer>
-  <p>GASTROACADEMY · GASTROCONMARIO — Medellín</p>
+  <div class="wrap">
+    <span class="fmark">GASTRO<span>ACADEMY</span></span>
+    <nav>
+      <a href="https://www.skool.com/gastroacademy-6773/about">Skool</a>
+      <a href="#oferta">Entrar</a>
+    </nav>
+  </div>
 </footer>
 
 <script>
+document.querySelectorAll('.video-lite').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    const id = el.dataset.id;
+    el.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" title="Testimonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+  }, {once:true});
+});
+
 const fades = document.querySelectorAll('.fade');
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
