@@ -121,10 +121,11 @@ section:last-of-type{border-bottom:none;}
 }
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--rojo);animation:pulse 1.6s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.photo-slot{
-  margin-top:24px;border:1.5px dashed #b5ab93;background:#fff;
-  padding:34px 18px;text-align:center;font-family:'DM Mono',monospace;
-  font-size:11.5px;color:#9a917e;letter-spacing:.03em;
+.photo-slot{margin:24px 0 0;border:1px solid var(--linea);background:#fff;}
+.photo-slot img{display:block;width:100%;max-height:420px;object-fit:cover;}
+.photo-slot figcaption{
+  padding:10px 14px;font-family:'DM Mono',monospace;font-size:11px;
+  color:#9a917e;letter-spacing:.03em;border-top:1px solid var(--linea);
 }
 
 /* ---- ROADMAP ---- */
@@ -310,7 +311,10 @@ footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
     <p>Mario lleva años operando varios restaurantes en Medellín. No enseña teoría de servilleta — enseña lo que usa esta semana, en su propia operación, para que el negocio funcione sin que él tenga que estar metido en todo.</p>
     <p>Mientras lees esto, Mario está abriendo <strong>La Grasa</strong>, su restaurante más reciente. No es un caso de estudio de hace cinco años — es la prueba en vivo de que el sistema funciona, documentada desde la construcción hasta la apertura.</p>
     <span class="live-badge"><span class="live-dot"></span> La Grasa abre estas semanas — síguelo en vivo desde adentro</span>
-    <div class="photo-slot">[ESPACIO PARA FOTO DE MARIO / LA GRASA — agregar antes de publicar]</div>
+    <figure class="photo-slot">
+      <img src="la-grasa.jpg" alt="Fachada de La Grasa, el nuevo restaurante de Mario, de noche">
+      <figcaption>La Grasa · Steak House — Medellín</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -403,8 +407,8 @@ footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
           </div>
         </div>
         <div class="factura-foot">
-          <a href="https://www.skool.com/gastroacademy-6773/about" class="factura-cta">ASEGURAR MI CUPO →</a>
-          <div class="factura-note">Cupos limitados · Cierra con la apertura de La Grasa</div>
+          <a href="https://www.skool.com/gastroacademy-6773/about" class="factura-cta">UNIRME EN SKOOL →</a>
+          <div class="factura-note">Te lleva a Skool para completar tu inscripción · Cupos limitados</div>
         </div>
       </div>
     </div>
@@ -434,6 +438,10 @@ footer p{font-family:'DM Mono',monospace;font-size:11px;color:#9a917e;}
     <div class="faq-item">
       <div class="faq-q">¿Necesito experiencia previa?</div>
       <div class="faq-a">No. GastroAcademy 2.0 está pensado para dueños que ya tienen un negocio corriendo, aunque sea pequeño o desordenado. Si ya estás operando, este sistema es para ti.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Qué es Skool?</div>
+      <div class="faq-a">Es la app donde vive toda la comunidad — ahí quedan las clases grabadas, el calendario de las lives, las charlas con Mario y el resto de dueños, y tu progreso mes a mes. Se instala en el celular como cualquier otra app: entras, ves qué hay nuevo y ya. Nada de perseguir archivos en un Drive ni mensajes perdidos en WhatsApp — es un solo lugar, hecho para esto.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">¿Qué pasa si no puedo estar en las lives?</div>
