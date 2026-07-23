@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GastroAcademy — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas</title>
-<meta name="description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy existe para que dejes de tomarlas solo.">
+<title>GastroAcademy 2.0 — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas</title>
+<meta name="description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy 2.0 existe para que dejes de tomarlas solo.">
 <link rel="canonical" href="https://gastroconmario-oss.github.io/gastroacademy/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="GastroAcademy — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas">
-<meta property="og:description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy existe para que dejes de tomarlas solo.">
+<meta property="og:title" content="GastroAcademy 2.0 — La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas">
+<meta property="og:description" content="Los restaurantes no fracasan por una gran decisión. Fracasan por cientos de pequeñas decisiones equivocadas. GastroAcademy 2.0 existe para que dejes de tomarlas solo.">
 <meta property="og:url" content="https://gastroconmario-oss.github.io/gastroacademy/">
 <meta property="og:image" content="https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GastroAcademy — Deja de tomar decisiones solo">
+<meta name="twitter:title" content="GastroAcademy 2.0 — Deja de tomar decisiones solo">
 <meta name="twitter:description" content="La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas.">
 <meta name="twitter:image" content="https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg">
 
@@ -21,7 +21,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "GastroAcademy",
+  "name": "GastroAcademy 2.0",
   "url": "https://gastroconmario-oss.github.io/gastroacademy/",
   "logo": "https://gastroconmario-oss.github.io/gastroacademy/la-grasa.jpg",
   "sameAs": ["https://www.skool.com/gastroacademy-6773/about"]
@@ -31,11 +31,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "GastroAcademy",
+  "name": "GastroAcademy 2.0",
   "description": "La comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas — conversaciones semanales, expertos invitados y acceso directo a decisiones operativas reales.",
   "provider": {
     "@type": "Organization",
-    "name": "GastroAcademy",
+    "name": "GastroAcademy 2.0",
     "sameAs": "https://gastroconmario-oss.github.io/gastroacademy/"
   }
 }
@@ -49,9 +49,14 @@
   --bg:#FAFAF8;
   --ink:#111111;
   --ink-2:#5E5E5E;
-  --red:#B22222;
-  --red-hover:#911B1B;
+  --red:#C40508;
+  --red-hover:#930406;
+  --red-deep:#4E0203;
+  --metal-1:#cfcfd2;
+  --metal-2:#8a8a8f;
+  --metal-3:#4a4a4d;
   --border:rgba(0,0,0,.08);
+  --divider:rgba(0,0,0,.12);
   --card:#FFFFFF;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -86,13 +91,48 @@ section{margin:clamp(64px,9vw,96px) 0;}
 
 .mark{
   position:absolute;top:36px;left:24px;z-index:5;
-  font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.03em;
+  display:inline-flex;align-items:baseline;gap:8px;
+  font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.045em;
   text-decoration:none;
 }
 .mark span{color:var(--red);}
+.mark .badge{color:#fff;}
+.badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--red);color:#fff;
+  font-weight:800;font-size:.42em;line-height:1;
+  padding:.35em .5em;border-radius:.35em;
+  vertical-align:middle;transform:translateY(-.05em);
+}
 @media(max-width:899px){
   .mark{left:50%;transform:translateX(-50%);}
 }
+
+.tagline-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:20px 0;color:var(--ink-2);
+}
+.tagline-divider::before,.tagline-divider::after{
+  content:'';flex:1;height:1px;background:var(--divider);
+}
+.tagline-divider span{
+  font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;white-space:nowrap;color:var(--ink-2);
+}
+
+.feature-row{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px;}
+@media(min-width:768px){.feature-row{grid-template-columns:repeat(3,1fr);gap:0;}}
+.feature-item{padding-top:24px;border-top:1px solid var(--divider);}
+@media(min-width:768px){
+  .feature-item{padding:0 32px;border-top:none;border-left:1px solid var(--divider);}
+  .feature-item:first-child{border-left:none;padding-left:0;}
+}
+.feature-item svg{width:30px;height:30px;stroke:var(--red);fill:none;stroke-width:1.6;margin-bottom:16px;}
+.feature-item .flabel{
+  display:block;font-weight:700;font-size:14px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--ink);margin-bottom:8px;
+}
+.feature-item p{color:var(--ink-2);font-size:15.5px;margin-bottom:0;}
 @media(min-width:1024px){
   body{line-height:1.6;}
   p{margin-bottom:16px;}
@@ -178,11 +218,17 @@ section{margin:clamp(64px,9vw,96px) 0;}
 .grasa-copy strong{color:#FF6F5E;}
 
 /* Julio / roadmap block */
-.julio-beat{margin-bottom:28px;}
-.julio-beat .k{
-  display:block;font-weight:700;font-size:14px;color:var(--red);
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;
+.julio-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:40px;}
+@media(min-width:768px){.julio-grid{grid-template-columns:repeat(3,1fr);}}
+.julio-card{
+  background:linear-gradient(155deg,#1c1c1c 0%,#0c0c0c 100%);
+  color:#fff;border-radius:20px;padding:28px 26px;
 }
+.julio-card .k{
+  display:block;font-weight:700;font-size:13px;color:var(--red);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;
+}
+.julio-card p{color:rgba(255,255,255,.85);font-size:15.5px;margin-bottom:0;}
 
 /* factura — apple wallet style */
 .factura-wrap{display:flex;justify-content:center;margin-top:24px;}
@@ -193,7 +239,7 @@ section{margin:clamp(64px,9vw,96px) 0;}
   box-shadow:0 20px 50px rgba(0,0,0,.18);
 }
 .factura-kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
-.factura h3{color:#fff;font-size:26px;margin-bottom:22px;}
+.factura .flogo{height:52px;width:auto;display:block;margin-bottom:22px;}
 .factura-list{list-style:none;}
 .factura-list li{
   display:flex;align-items:center;gap:12px;
@@ -205,6 +251,8 @@ section{margin:clamp(64px,9vw,96px) 0;}
 .factura-price{margin:26px 0 22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);}
 .factura-price .amount{font-size:44px;font-weight:800;letter-spacing:-.02em;}
 .factura-price .amount span{font-size:15px;font-weight:500;color:rgba(255,255,255,.6);}
+.factura-price .price-cop{font-size:13.5px;color:rgba(255,255,255,.5);margin-top:4px;}
+.factura-price .price-alt{font-size:13.5px;color:rgba(255,255,255,.65);margin-top:10px;}
 .factura-price .terms{font-size:15px;font-weight:500;color:rgba(255,255,255,.85);margin-top:8px;}
 .factura .btn{width:100%;justify-content:center;}
 
@@ -231,8 +279,9 @@ section{margin:clamp(64px,9vw,96px) 0;}
 
 footer{padding:56px 0;border-top:1px solid var(--border);}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
-footer .fmark{font-weight:700;font-size:14px;}
+footer .fmark{display:inline-flex;align-items:baseline;gap:6px;font-weight:800;font-size:14px;letter-spacing:-.03em;}
 footer .fmark span{color:var(--red);}
+footer .fmark .badge{color:#fff;}
 footer nav{display:flex;gap:20px;}
 footer a{font-size:13.5px;color:var(--ink-2);text-decoration:none;}
 footer a:hover{color:var(--ink);}
@@ -240,13 +289,14 @@ footer a:hover{color:var(--ink);}
 </head>
 <body>
 
-<a href="#" class="mark">GASTRO<span>ACADEMY</span></a>
+<a href="#" class="mark">GASTRO<span>ACADEMY</span><span class="badge">2.0</span></a>
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap-wide">
     <div class="hero-grid">
       <div class="hero-copy">
+        <p class="lead">Si estás aquí es porque tienes un restaurante y sientes que hay algo que no cuadra. Déjame explicártelo.</p>
         <h1 class="hook"><strong>Tu restaurante no va a cerrar por lo que crees.</strong></h1>
         <p>No es la inflación.</p>
         <p>Ni Rappi.</p>
@@ -268,13 +318,39 @@ footer a:hover{color:var(--ink);}
         <p>Mientras tanto, hay otros restaurantes que enfrentan exactamente los mismos problemas.</p>
         <p>La diferencia es que aprendieron a tomar mejores decisiones. No porque fueran más inteligentes, sino porque <strong class="hl-u">dejaron de hacerlo solos</strong>.</p>
         <div class="hero-brand">
-          <p><strong>Bienvenido a GastroAcademy</strong>: la comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas. No únicamente restaurantes.</p>
+          <p><strong>Bienvenido a GastroAcademy 2.0</strong>: la comunidad donde los dueños de restaurantes aprenden a construir empresas gastronómicas. No únicamente restaurantes.</p>
           <p class="lead">Cada semana, una conversación real que te ayuda a tomar la siguiente decisión correcta — antes de que te cueste dinero.</p>
         </div>
         <a href="#oferta" class="btn">Quiero ser parte desde el comienzo →</a>
       </div>
       <div class="hero-media">
         <img src="mario-hero.jpg" alt="Mario, fundador de GastroAcademy" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTO DE MARCA (copy borrador, pendiente de tu ajuste) -->
+<section class="fade">
+  <div class="wrap">
+    <div class="tagline-divider"><span>Educación. Estrategia. Resultados.</span></div>
+  </div>
+  <div class="wrap-wide">
+    <div class="feature-row">
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V14M10 20V10M16 20V4"/></svg>
+        <span class="flabel">Más rentabilidad</span>
+        <p>Decisiones que se traducen en mejores números, mes tras mes.</p>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19c0-5 2.5-9 6-9s6 4 6 9"/><circle cx="12" cy="8" r="1"/></svg>
+        <span class="flabel">Operación ordenada</span>
+        <p>Procesos y equipos que funcionan sin que tengas que estar encima de todo.</p>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/></svg>
+        <span class="flabel">Estrategia real</span>
+        <p>De dueños de restaurante, para dueños de restaurante.</p>
       </div>
     </div>
   </div>
@@ -290,6 +366,19 @@ footer a:hover{color:var(--ink);}
     <p><strong>Aprender perdiendo dinero.</strong></p>
     <p>Cada error cuesta. Cada decisión enseña. Pero también factura.</p>
     <p>Y esa forma de aprender puede tomar años.</p>
+  </div>
+</section>
+
+<!-- COSTO DE NO ENTRAR -->
+<section class="fade">
+  <div class="wrap">
+    <p>Mientras tanto, ¿qué te está costando no tener estas conversaciones?</p>
+    <p>Pagar una nómina cara por desconocimiento.</p>
+    <p>Perder mercancía por el desorden.</p>
+    <p>Vender más, pero sin control real de tu negocio.</p>
+    <p>Perder horas haciendo contenido para redes que no conecta ni vende.</p>
+    <p><strong>¿Cuánto te cuesta eso? ¿200 dólares? ¿500? ¿1.000?</strong></p>
+    <p class="lead">Probablemente ya lo estás pagando. Solo que no te llega en una sola factura.</p>
   </div>
 </section>
 
@@ -352,7 +441,7 @@ footer a:hover{color:var(--ink);}
   <div class="grasa-copy">
     <div class="wrap">
       <p>Mientras lees esta página... Mario sigue operando restaurantes. Sigue contratando personas. Sigue revisando costos. Sigue creando campañas. Sigue resolviendo problemas.</p>
-      <p>Y muy pronto abrirá un nuevo restaurante. <strong>La Grasa.</strong></p>
+      <p>Hace poco abrió su restaurante más nuevo. <strong>La Grasa.</strong> Cuatro meses de construcción, y ya está recibiendo a sus primeros clientes.</p>
       <p>Eso significa que las conversaciones dentro de GastroAcademy nunca salen de un libro. Salen de la vida real.</p>
     </div>
   </div>
@@ -364,6 +453,7 @@ footer a:hover{color:var(--ink);}
     <p>Imagina poder sentarte una vez por semana con personas que viven exactamente los mismos desafíos que tú.</p>
     <p>Mario. Su chef corporativo. Su gerente. Su equipo creativo. Especialistas invitados. Y otros empresarios gastronómicos.</p>
     <p>No para escuchar discursos. Sino para entender qué está funcionando. Qué dejó de funcionar. Y qué decisiones están tomando hoy.</p>
+    <p>Sí, a veces hay algo de teoría — la necesaria. Pero lo que de verdad pasa ahí adentro son preguntas reales, de tu operación real, resueltas en el momento. Eso no lo vas a encontrar en ningún otro lado.</p>
     <p>Porque <strong>eso cambia mucho más un restaurante</strong> que cualquier video pregrabado.</p>
   </div>
 </section>
@@ -380,18 +470,24 @@ footer a:hover{color:var(--ink);}
     <h2>El primer mes</h2>
     <p>El primer mes no es el comienzo de un curso.</p>
     <p><strong>Es el comienzo de una conversación.</strong></p>
-    <div class="julio-beat">
-      <span class="k">Mario</span>
-      <p>Abrirá la comunidad compartiendo lo que ha visto cambiar en la industria gastronómica durante los últimos años. Y hacia dónde cree que va todo.</p>
+  </div>
+  <div class="wrap-wide">
+    <div class="julio-grid">
+      <div class="julio-card">
+        <span class="k">Mario</span>
+        <p>Abrirá la comunidad compartiendo lo que ha visto cambiar en la industria gastronómica durante los últimos años. Y hacia dónde cree que va todo.</p>
+      </div>
+      <div class="julio-card">
+        <span class="k">El chef corporativo</span>
+        <p>Mostrará por qué el orden dentro de una cocina termina reflejándose directamente en la rentabilidad del negocio.</p>
+      </div>
+      <div class="julio-card">
+        <span class="k">Contenido</span>
+        <p>Hablaremos de algo que hoy ningún restaurante puede ignorar: cómo crear contenido que haga que las personas quieran visitarte antes incluso de probar tu comida.</p>
+      </div>
     </div>
-    <div class="julio-beat">
-      <span class="k">El chef corporativo</span>
-      <p>Mostrará por qué el orden dentro de una cocina termina reflejándose directamente en la rentabilidad del negocio.</p>
-    </div>
-    <div class="julio-beat">
-      <span class="k">Contenido</span>
-      <p>Hablaremos de algo que hoy ningún restaurante puede ignorar: cómo crear contenido que haga que las personas quieran visitarte antes incluso de probar tu comida.</p>
-    </div>
+  </div>
+  <div class="wrap">
     <p class="lead">No queremos llenar un calendario. Queremos ayudarte a tomar mejores decisiones. Semana tras semana.</p>
   </div>
 </section>
@@ -436,38 +532,28 @@ footer a:hover{color:var(--ink);}
   <p class="video-caption">Dueño de LF Burger</p>
 </div>
 
-<!-- LOS FUNDADORES -->
-<section class="fade">
-  <div class="wrap">
-    <p>Dentro de algunos años probablemente habrá cientos de empresarios dentro de GastroAcademy.</p>
-    <p>Pero solamente cincuenta personas podrán decir:</p>
-    <p><strong>"Yo estuve cuando todo comenzó."</strong></p>
-    <p>Por eso decidimos hacer algo especial.</p>
-    <p>Los primeros cincuenta miembros serán invitados a un encuentro presencial con Mario. Sin cámaras. Sin escenario. Sin filtros. Simplemente una conversación entre personas que decidieron construir mejores restaurantes.</p>
-    <p>Ese momento nunca volverá a repetirse.</p>
-  </div>
-</section>
-
 <!-- EL PRECIO + FACTURA -->
 <section class="fade" id="oferta">
   <div class="wrap">
     <p>Un restaurante puede perder mucho más de 39 dólares en una sola decisión.</p>
     <p>Una receta mal costeada. Un proveedor equivocado. Una promoción mal diseñada. Un desperdicio que nadie detectó.</p>
     <p><strong>Si una sola conversación evita uno de esos errores... la membresía ya se pagó sola.</strong></p>
+    <p>Todo pasa dentro de <strong>Skool</strong>: una app gratuita que abres desde tu celular, donde interactúas con otros dueños, ves las clases (quedan grabadas) y entras a las conversaciones en vivo — todo en un solo lugar.</p>
 
     <div class="factura-wrap">
       <div class="factura">
         <div class="factura-kicker">Tu pase para entrar</div>
-        <h3>GastroAcademy</h3>
+        <img class="flogo" src="gastroacademy-logo.png" alt="GastroAcademy 2.0" width="1006" height="599">
         <ul class="factura-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Acceso inmediato</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Conversaciones semanales</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Expertos invitados</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Comunidad privada</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Evento fundador (primeros 50)</li>
         </ul>
         <div class="factura-price">
           <div class="amount">$39<span> USD / mes</span></div>
+          <div class="price-cop">🇨🇴 ≈ $130.000 COP / mes</div>
+          <div class="price-alt">¿Prefieres pagar todo el año? $379 USD/año (ahorras $89 vs. pagar mes a mes).</div>
           <div class="terms">Sin permanencia. Sin contratos. Simplemente quédate mientras siga aportándole valor a tu restaurante.</div>
         </div>
         <a href="https://www.skool.com/gastroacademy-6773/about" class="btn">Quiero entrar a GastroAcademy →</a>
@@ -503,13 +589,6 @@ footer a:hover{color:var(--ink);}
     </details>
 
     <details class="faq-item">
-      <summary>¿Cuándo cierra el precio fundador?
-        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
-      </summary>
-      <div class="faq-a">Es solo para los primeros 50 dueños que entren, y también está ligado a la apertura de La Grasa — lo que pase primero, cierra el cupo.</div>
-    </details>
-
-    <details class="faq-item">
       <summary>¿En qué moneda se cobra y hay reembolsos?
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
       </summary>
@@ -533,7 +612,7 @@ footer a:hover{color:var(--ink);}
 
 <footer>
   <div class="wrap">
-    <span class="fmark">GASTRO<span>ACADEMY</span></span>
+    <span class="fmark">GASTRO<span>ACADEMY</span><span class="badge">2.0</span></span>
     <nav>
       <a href="https://www.skool.com/gastroacademy-6773/about">Skool</a>
       <a href="#oferta">Entrar</a>
